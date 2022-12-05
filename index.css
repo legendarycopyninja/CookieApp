@@ -106,6 +106,7 @@ Challenge:
     margin: 9px;
 }
 
+
 .modal-close-btn {
   font-size: 22px;
   font-weight: bold;
@@ -132,6 +133,9 @@ Challenge:
     display: flex;
     justify-content: center;
     gap: 5px;
+}
+.reverse {
+    flex-direction: row-reverse;
 }
 
 .modal-btn{

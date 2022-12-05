@@ -38,6 +38,7 @@ Challenge:
 
 const form = document.getElementById("consent-form")
 const modalText = document.getElementById("modal-text")
+const declineBtn = document.getElementById('decline-btn')
 
 
 
@@ -66,20 +67,6 @@ form.addEventListener('submit',function(e){
     </p>
 </div`
 
-setTimeout(function(){
-document.getElementById('uploadText').innerText = `Making the sale...`
-},2000)
-
-setTimeout(function(){
-    document.getElementById("modal-inner").innerHTML =`<h2>Thanks you sucker! </h2>
-<p>We just sold the rights to your eternal soul.</p>
-<div class="idiot-gif">
-    <img src="images/pirate.gif">
-</div>`
-},6000)
-
-})
-
  /* 
 Challenge: 
 1. Use a setTimeout to make the phrase "Uploading
@@ -98,7 +85,55 @@ Challenge:
         <img src="images/pirate.gif">
     </div>
     ` 
-*/  
+1. Create a const to store the user's name and
+   use a FormData method to extract the 
+   submitted name from the FormData object.
+2. Insert the user's name into the HTML string
+   that contains the final message we show our
+   users.
+*/ 
+
+setTimeout(function(){
+document.getElementById('uploadText').innerText = `Making the sale...`
+},2000)
+
+const nameDisplay = new FormData(form)
+const name = nameDisplay.get('fullName')
+
+setTimeout(function(){
+    document.getElementById("modal-inner").innerHTML =`<h2>Thanks <span class="modal-display-name">${name}</span> you sucker! </h2>
+<p>We just sold the rights to your eternal soul.</p>
+<div class="idiot-gif">
+    <img src="images/pirate.gif">
+</div>`
+modalCloseBtn.disabled = false
+},6000)
+
+})
+
+/*   
+Challenge: 
+1. Take control of the decline btn. (What do you
+   need to do to make that possible?)
+2. Set up an eventListener that is triggered 
+   when a user's cursor hovers over the decline 
+   button. (Google the event to listen out for!)
+  
+1. Take control of the div holding the buttons.
+2. In index.css, set up a selector for a new class
+   that uses flex-direction to reverse the order 
+   of its child elements.
+3. Toggle that class on the div holding the buttons 
+   when a user's cursor hovers over the decline button.  
+*/ 
+
+const buttonBox = document.getElementById('modal-choice-btns')
+declineBtn.addEventListener('mouseenter', function(){
+buttonBox.classList.toggle('reverse')
+})
+
+ 
+
 
 
 
