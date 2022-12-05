@@ -123,7 +123,7 @@ Challenge:
 .modal-close-btn:disabled{
     color: whitesmoke;
     opacity: 0.2;
-    /* cursor: not-allowed; */
+    cursor: not-allowed;
 }
 
 .modal-choice-btns{
@@ -131,6 +131,7 @@ Challenge:
     padding: 8px 16px;
     display: flex;
     justify-content: center;
+    gap: 5px;
 }
 
 .modal-btn{
